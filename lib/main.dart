@@ -1,6 +1,6 @@
-
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+
 import 'pages/login_page.dart';
 
 Future<void> main() async {
@@ -8,7 +8,7 @@ Future<void> main() async {
 
   await Supabase.initialize(
     url: 'https://ldnqutuurqebkgajhhsg.supabase.co',
-    anonKey: 'sb_publishable_WfCfSN9Klii1VhG_Ls7FPQ_FVKlIMrj',
+    publishableKey: 'sb_publishable_WfCfSN9Klii1VhG_Ls7FPQ_FVKlIMrj',
   );
 
   runApp(const FreshlyApp());
@@ -23,9 +23,7 @@ class FreshlyApp extends StatelessWidget {
       title: 'Freshly',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF79CE8D),
-        ),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF79CE8D)),
         scaffoldBackgroundColor: Colors.white,
         useMaterial3: true,
       ),

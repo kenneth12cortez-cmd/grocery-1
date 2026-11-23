@@ -1,6 +1,6 @@
-
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+
 import 'login_page.dart';
 
 class DashboardPage extends StatelessWidget {
@@ -50,18 +50,12 @@ class DashboardPage extends StatelessWidget {
             const SizedBox(height: 20),
             const Text(
               'You\'re logged in!',
-              style: TextStyle(
-                fontSize: 26,
-                fontWeight: FontWeight.bold,
-              ),
+              style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
             const Text(
               'Login was successful.',
-              style: TextStyle(
-                color: Colors.grey,
-                fontSize: 16,
-              ),
+              style: TextStyle(color: Colors.grey, fontSize: 16),
             ),
             const SizedBox(height: 15),
             Text(

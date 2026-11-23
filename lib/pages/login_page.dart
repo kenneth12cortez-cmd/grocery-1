@@ -1,6 +1,6 @@
-
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+
 import 'register_page.dart';
 import 'dashboard_page.dart';
 
@@ -46,9 +46,7 @@ class _LoginPageState extends State<LoginPage> {
 
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(
-          builder: (context) => const DashboardPage(),
-        ),
+        MaterialPageRoute(builder: (context) => const DashboardPage()),
       );
     } on AuthException catch (error) {
       if (mounted) {
@@ -69,9 +67,8 @@ class _LoginPageState extends State<LoginPage> {
 
   // Message display
   void showMessage(String message) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(message)),
-    );
+    ScaffoldMessenger.of(context)
+        .showSnackBar(SnackBar(content: Text(message)));
   }
 
   @override
@@ -115,10 +112,7 @@ class _LoginPageState extends State<LoginPage> {
               const Text(
                 'Login',
                 textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 26,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
               ),
 
               const SizedBox(height: 25),
@@ -171,10 +165,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   child: isLoading
                       ? const CircularProgressIndicator(color: Colors.white)
-                      : const Text(
-                          'Login',
-                          style: TextStyle(fontSize: 16),
-                        ),
+                      : const Text('Login', style: TextStyle(fontSize: 16)),
                 ),
               ),
 
@@ -194,9 +185,7 @@ class _LoginPageState extends State<LoginPage> {
                       },
                 child: const Text(
                   'Don\'t have an account? Register',
-                  style: TextStyle(
-                    color: Color(0xFF4D9F62),
-                  ),
+                  style: TextStyle(color: Color(0xFF4D9F62)),
                 ),
               ),
             ],

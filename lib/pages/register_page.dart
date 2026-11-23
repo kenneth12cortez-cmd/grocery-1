@@ -1,5 +1,4 @@
-
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -55,9 +54,7 @@ class _RegisterPageState extends State<RegisterPage> {
       final response = await Supabase.instance.client.auth.signUp(
         email: email,
         password: password,
-        data: {
-          'full_name': fullName,
-        },
+        data: {'full_name': fullName},
       );
 
       if (!mounted) return;
@@ -88,9 +85,8 @@ class _RegisterPageState extends State<RegisterPage> {
 
   // Message display
   void showMessage(String message) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(message)),
-    );
+    ScaffoldMessenger.of(context)
+        .showSnackBar(SnackBar(content: Text(message)));
   }
 
   @override
@@ -136,10 +132,7 @@ class _RegisterPageState extends State<RegisterPage> {
               const Text(
                 'Create Account',
                 textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 26,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
               ),
 
               const SizedBox(height: 25),
@@ -225,10 +218,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                   child: isLoading
                       ? const CircularProgressIndicator(color: Colors.white)
-                      : const Text(
-                          'Register',
-                          style: TextStyle(fontSize: 16),
-                        ),
+                      : const Text('Register', style: TextStyle(fontSize: 16)),
                 ),
               ),
 
@@ -239,9 +229,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 onPressed: isLoading ? null : () => Navigator.pop(context),
                 child: const Text(
                   'Already have an account? Login',
-                  style: TextStyle(
-                    color: Color(0xFF4D9F62),
-                  ),
+                  style: TextStyle(color: Color(0xFF4D9F62)),
                 ),
               ),
             ],
